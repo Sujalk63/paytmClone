@@ -1,0 +1,6 @@
+1) tech stack backend:node, express, mongoose, mongoDB, frintend: react
+2) Logical Grouping, Modular Middleware, optimised and versioned api.
+3) Used JWT for authentication (json web token). for authentication
+4) used zod for validation
+5) updation of first name last name and password 
+6) implemented transaction in mongoDB by crating Start session then startTransaction and commitTransaction 

@@ -10,4 +10,4 @@ const app = express()
 
 app.listen(3000)
 
-app.use("/api/v1", mainRouter)
+app.use("/api/v1", mainRouter) //mainRouter is index router of the route folder
