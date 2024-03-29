@@ -50,7 +50,7 @@ const Account = mongoose.model('Account', accountSchema);
 
 
 module.exports = {
-	User,
-    Account
+	User: User, 
+    Account: Account 
 };
 

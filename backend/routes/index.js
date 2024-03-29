@@ -3,7 +3,11 @@ const router = express.Router();
 const userRouter = require("./user")
 const accountRouter= require("./account")
 
-router.get("/user", userRouter)
-router.get("/account", accountRouter)
+
+console.log("reached main router");
+
+
+router.use("/user", userRouter)
+router.use("/account", accountRouter)
 
 module.exports= router;

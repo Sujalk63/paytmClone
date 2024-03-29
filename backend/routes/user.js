@@ -2,9 +2,9 @@ const express = require("express");
 const zod = require("zod");
 const router = express.Router();
 const jwt = require("jsonwebtoken");
-const JWT_SECRET = require("../config");
-const User = require("../userSchema");
-const Account = require("../userSchema");
+const {JWT_SECRET} = require("../config");
+const {User, Account} = require("../userSchema");
+// const Account = require("../userSchema");
 const { authMiddleware } = require("../middleware");
 
 // signup schema
@@ -28,7 +28,7 @@ router.post("/signup", async (req, res) => {
       .json({ message: "Email already exist / Incorrect inputs" });
   }
 
-  const existingUser = User.findOne({
+  const existingUser = await User.findOne({
     username: body.username,
   });
 
@@ -42,16 +42,16 @@ router.post("/signup", async (req, res) => {
 
   // creating account of the user with some random balance
 
-  const userID = user._id;
+  const userId = user._id;
 
   await Account.create({
-    userID,
+    userId,
     balance: 1 + Math.random() * 10000,
   });
 
   const token = jwt.sign(
     {
-      userId: user._id,
+      userId,
     },
     JWT_SECRET
   );
