@@ -3,6 +3,7 @@ const { number } = require("zod");
 
 mongoose.connect("mongodb://localhost:27017/paytmDatabse")
 
+
 const userSchema = new mongoose.Schema({
     username: {
         type: String,
