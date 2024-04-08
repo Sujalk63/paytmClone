@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 const { number } = require("zod");
 
-mongoose.connect("mongodb://localhost:27017/paytmDatabse")
+// mongoose.connect("mongodb://localhost:27017/paytmDatabse")
 
 
 const userSchema = new mongoose.Schema({
