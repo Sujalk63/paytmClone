@@ -44,6 +44,7 @@ router.post("/transfer", authMiddleware, async (req, res) => {
     await session.abortTransaction();
     return res.status(400).json({
       message: "Insufficient balance",
+      success: false,
     });
   }
 
@@ -70,6 +71,7 @@ router.post("/transfer", authMiddleware, async (req, res) => {
   await session.commitTransaction();
   res.json({
     message: "Transfer successful",
+    success: true,
   });
 });
 

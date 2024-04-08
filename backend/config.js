@@ -5,5 +5,5 @@
 
 
 module.exports = {
-    JWT_SECRET: "sujalsSecret"
+    JWT_SECRET: "secret"
 };

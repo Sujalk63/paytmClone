@@ -43,7 +43,11 @@ const accountSchema = new mongoose.Schema({
     balance: {
         type: Number,
         required: true
-    }
+    },
+    success: {
+        type: Boolean,
+        default: false  // Default value is false until the transfer is successful
+      }
 })
 
 const User = mongoose.model('User', userSchema);

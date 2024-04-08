@@ -1,23 +1,24 @@
-import React from 'react';
+import { BottomWarning } from "../components/BottomWarning"
+import { Button } from "../components/Button"
+import { Heading } from "../components/Heading"
+import { InputBox } from "../components/InputBox"
+import { SubHeading } from "../components/SubHeading"
 
 export const Signin = () => {
-  return (
-    <div className="flex flex-col items-center justify-center h-screen bg-gray-100">
-      <div className="max-w-md w-full bg-white rounded-lg overflow-hidden shadow-lg p-8">
-        <h1 className="text-3xl font-bold mb-4 text-center">Signin</h1>
-        <div className="mb-4">
-          <label htmlFor="username" className="block text-gray-700 font-semibold mb-2">Username</label>
-          <input id="username" type="text" className="w-full border-gray-300 border rounded-md p-2 focus:outline-none focus:border-blue-500" />
+    return <div className="bg-slate-300 h-screen flex justify-center">
+    <div className="flex flex-col justify-center">
+      <div className="rounded-lg bg-white w-80 text-center p-2 h-max px-4">
+        <Heading label={"Sign in"} />
+        <SubHeading label={"Enter your credentials to access your account"} />
+        <InputBox placeholder="SujalK" label={"Username"} />
+        <InputBox placeholder="sujal@123" label={"Password"} />
+        <div className="pt-4">
+          <Button label={"Sign in"}  />
         </div>
-        <div className="mb-4">
-          <label htmlFor="password" className="block text-gray-700 font-semibold mb-2">Password</label>
-          <input id="password" type="password" className="w-full border-gray-300 border rounded-md p-2 focus:outline-none focus:border-blue-500" />
-        </div>
-        <button className="bg-blue-500 text-white font-semibold py-2 px-4 rounded-md hover:bg-blue-600 transition duration-300 w-full">Signin</button>
-        <p className="mt-4 text-gray-700 text-center">Don't have an account? <a href="/signup" className="text-blue-500 font-semibold">Signup</a></p>
+        <BottomWarning label={"Don't have an account?"} buttonText={"Sign up"} to={"/signup"} />
       </div>
     </div>
-  );
+  </div>
 }
 
 // In named exports (e.g., export const, export function), 
