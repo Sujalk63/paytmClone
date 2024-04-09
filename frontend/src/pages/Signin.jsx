@@ -15,7 +15,6 @@ export const Signin = () => {
 
   const handleSignIn = async () => {
     try {
-      // Make a POST request to your login endpoint
       const response = await axios.post(
         "http://localhost:3000/api/v1/user/signin",
         {
@@ -23,16 +22,9 @@ export const Signin = () => {
           password: password,
         }
       );
-
-      // Assuming your backend returns a token upon successful login,
-      // you can store the token in local storage or session storage
       localStorage.setItem("token", response.data.token);
       navigate("/dashboard");
-
-      // Redirect the user to the dashboard or perform any other action upon successful login
-      // Example: window.location.href = '/dashboard';
     } catch (error) {
-      // Handle login error here
       console.error("Login failed:", error);
       console.log(error);
       setAlert(error.response.data.message);
