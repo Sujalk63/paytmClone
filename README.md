@@ -1,4 +1,4 @@
-# Paytm Project
+# Payment App Project
 
 ## Overview
 This project is a Paytm-like application developed using Node.js, Express, MongoDB for the backend, and React with Tailwind CSS for the frontend. It implements various features like authentication, transaction handling, and user management.
